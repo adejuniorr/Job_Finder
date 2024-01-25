@@ -1,0 +1,91 @@
+>> Iniciando o projeto:
+```
+npm init
+npm install:
+	     express >> framworkd nodejs para criação de APIs e aplicações web em geral
+	     express-handlebars >> template engine (para imprimir o html devidamente estruturado)
+	     body-parser >> conversão de body de requisições em dados no backend
+	     sequelize >> mapeador objeto-relacional (relaciona objetos e elementso de bancos de dados)
+	     sqlite3 >> conexão com banco de dados
+	     nodemon >> reinicia automaticamente a aplicação node quando houver munda em arquivos
+```
+
+Utilizando o Nodemon:
+
+No package.json, atualizar o valor do atributo "scripts" inserindo: 
+```
+"dev": "nodemon <arquivo-principal.js>"
+```
+
+Ao rodar o arquivo-principal.js, ao invés de rodar "node arquivo-principal.js" rodar "npm run dev" e assim a aplicação será atualizada sempre que o arquivo for modificado e salvo.
+
+
+>> Configurando Banco de Dados:
+
+O SQLite3 não necessita de SGBD. Um arquivo é criado e nele as consultas são realizadas. Por conta disso, é um BD conveniente para pequenas aplicações.
+
+_> Para a configuração, criamos um novo diretório 'db' e nele criamos o arquivo "connection.js" para criar/conectar ao banco de dados com o sequelize:
+
+```
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: './db/app.db' // arquivo (que nesse caso será criado) para o bd
+});
+
+module.exports = sequelize; // export para que o db seja usado no app.js
+```
+
+_> Para finalizar a conexão, no app.js:
+
+```
+// DB Connection
+
+db.authenticate()
+  .then(() => {
+    console.log('Conexão com Banco de Dados estabelecida!');
+  })
+  .catch(err => {
+    console.log(`[OPS, ALGO DEU ERRADO]: ${err}`);
+  });
+```
+
+
+_> Para criar as tabelas, é necessário o uso do DB Browser for SQLite. Em seguida, criam-se os modelos (classes/objetos) representantes de cada componente/tabela em um novo diretório (models) e configura-se como segue no exemplo abaixo:
+
+[!] Após criar a tabela jobs com as colunas id, title, salary, company, email, new, criatedAt e updatedAt
+
+```
+const Sequelize = require('sequelize');
+const db = require('../db/connection');
+
+const Job = db.define('job', {
+    title: {
+        type: Sequelize.STRING,
+    },
+    description: {
+        type: Sequelize.STRING,
+    },
+    salary: {
+        type: Sequelize.STRING,
+    },
+    company: {
+        type: Sequelize.STRING,
+    },
+    email: {
+        type: Sequelize.STRING,
+    },
+    new_job: {
+        type: Sequelize.INTEGER,
+    }
+});
+
+module.exports = Job;
+```
+
+
+A configuração das rotas pode ser compreendida lendo parte inicial do código em 'app.js' e 'routes/jobs.js'.
+
+
+O teste de funcionalidade das rotas pode ser observado através do Postman lembrando sempre de colocar o server online antes e verificando a corretude dos nomes das colunas da tabela do nosso BD para evitar problemas nas queries.

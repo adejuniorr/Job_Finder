@@ -1,0 +1,10 @@
+Iniciando o projeto:
+
+npm init
+npm install:
+	     express >> framworkd nodejs para criação de APIs e aplicações web em geral
+	     express-handlebars >> template engine (para imprimir o html devidamente estruturado)
+	     body-parser >> conversão de body de requisições em dados no backend
+	     sequelize >> mapeador objeto-relacional (relaciona objetos e elementso de bancos de dados)
+	     sqlite3 >> conexão com banco de dados
+	     nodemon >> reinicia automaticamente a aplicação node quando houver munda em arquivos

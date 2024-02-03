@@ -9,7 +9,6 @@ router.get('/test', (req,res) => {
 
 // Add Job via POST
 router.post('/add', (req,res) => {
-
     /* Através do body-parser, fazemos o mapeamento dos atributos obtidos 
     pelo corpo da requisição */
     let { title, description, salary, company, email, is_new } = req.body;

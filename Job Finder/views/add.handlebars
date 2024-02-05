@@ -1,0 +1,40 @@
+<div id="add-form-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Adicione uma nova vaga</h1>
+        </div>
+        <div id="form-box" class="col-md-12">
+            <h2>Preencha o formulário</h2>
+            <form action="">
+                <div class="form-group">
+                    <label for="title">Título da vaga:</label>
+                    <input required type="text" class="form-control" id="title" name="title"
+                        part="Digite o título da vaga">
+                    <small id="titleHelp" class="form-text text-muted">Campo obrigatório</small>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <textarea required type="text" class="form-control" id="description" name="description"
+                        placeholder="Descreva brevemente as atividades que serão realizadas pelo desenvolvedor"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="company">Empresa:</label>
+                    <input required type="text" class="form-control" id="company" name="company"
+                        part="Digite o nome da empresa">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email para contato:</label>
+                    <input required type="email" class="form-control" id="email" name="email"
+                        part="Digite o email para contato">
+                </div>
+                <div class="form-group">
+                    <label for="salario">Salário:</label>
+                    <input required type="salario" class="form-control" id="salario" name="salario"
+                        part="Digite o salário da vaga">
+                </div>
+                <input type="hidden" name="new_job" value="1">
+                <div id="button-box"><button type="submit" class="btn btn-primary">Enviar</button></div>
+            </form>
+        </div>
+    </div>
+</div>

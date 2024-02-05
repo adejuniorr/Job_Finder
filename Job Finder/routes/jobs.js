@@ -7,6 +7,10 @@ router.get('/test', (req,res) => {
     res.send('Jobs Routes working!');
 }) */
 
+router.get('/add', (req,res) => {
+    res.render('add');
+})
+
 // Add Job via POST
 router.post('/add', (req,res) => {
     /* Através do body-parser, fazemos o mapeamento dos atributos obtidos 

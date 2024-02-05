@@ -35,6 +35,7 @@
     color: #f03e3e;
     border-color: #f03e3e;
 }
+/* END NAVBAR */
 
 
 /* BANNER */
@@ -58,6 +59,7 @@
     font-size: 1rem;
     padding-bottom: 30px;
 }
+/* END BANNER */
 
 
 /* FORM */
@@ -81,6 +83,7 @@
     background-color: #f03e3e;
     border: 1px solid transparent;
 }
+/* END FORM */
 
 
 /* JOB LIST */
@@ -146,3 +149,57 @@
 .new-job .new-job-label {
     display: block;
 }
+/* END JOB LIST */
+
+
+/* ADD JOB PAGE */
+#add-form-container {
+    margin-top: 80px;
+}
+
+#form-box {
+    padding: 50px;
+    box-shadow: 0 1px 5px #bbb;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+
+#add-form-container h2 {
+    color: #f03e3e;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#add-form-container form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#add-form-container form input,
+#add-form-container form textarea {
+    border: 2px solid #ccc;
+    background-color: #f8f9fa;
+}
+
+#button-box {
+    text-align: right;
+}
+
+#form-box button {
+    height: 50px;
+    width: 200px;
+    background-color: #f03e3e;
+    border: 1px solid transparent;
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+#form-box button:hover {
+    background-color: #fff;
+    color: #f03e3e;
+    border-color: #f03e3e;
+}
+/* END ADD JOB PAGE */
